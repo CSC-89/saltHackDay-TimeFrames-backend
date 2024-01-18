@@ -13,4 +13,8 @@ using TimeFrames.Api.Models;
         }
 
         public DbSet<TimeFrames.Api.Models.User> User { get; set; } = default!;
+
+        public DbSet<TimeFrames.Api.Models.DayData>? DayData { get; set; }
+
+        public DbSet<TimeFrames.Api.Models.ToDo>? ToDo { get; set; }
     }

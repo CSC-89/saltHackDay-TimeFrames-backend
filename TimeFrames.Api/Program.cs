@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<TimeFrameContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("TimeFrameContext") ?? throw new InvalidOperationException("Connection string 'TimeFrameContext' not found.")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("AzureDb") ?? throw new InvalidOperationException("Connection string 'TimeFrameContext' not found.")));
 
 // Add services to the container.
 
