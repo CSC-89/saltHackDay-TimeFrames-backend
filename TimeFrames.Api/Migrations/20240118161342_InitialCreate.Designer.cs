@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace TimeFrames.Api.Migrations
 {
     [DbContext(typeof(TimeFrameContext))]
-    [Migration("20240118075804_InitialCreate")]
+    [Migration("20240118161342_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -60,6 +60,9 @@ namespace TimeFrames.Api.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("CompletionTime")
+                        .HasColumnType("int");
 
                     b.Property<string>("Content")
                         .IsRequired()

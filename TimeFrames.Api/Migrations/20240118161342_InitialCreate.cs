@@ -51,6 +51,7 @@ namespace TimeFrames.Api.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CompletionTime = table.Column<int>(type: "int", nullable: false),
                     TypeColor = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DayDataId = table.Column<int>(type: "int", nullable: true)
                 },
