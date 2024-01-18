@@ -26,55 +26,6 @@ namespace TimeFrames.Api.Controllers
             return await _context.ToDo.ToListAsync();
         }
 
-        // GET: api/ToDo/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<ToDo>> GetToDo(int id)
-        {
-          if (_context.ToDo == null)
-          {
-              return NotFound();
-          }
-            var toDo = await _context.ToDo.FindAsync(id);
-
-            if (toDo == null)
-            {
-                return NotFound();
-            }
-
-            return toDo;
-        }
-
-        // PUT: api/ToDo/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutToDo(int id, ToDo toDo)
-        {
-            if (id != toDo.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(toDo).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ToDoExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
         // POST: api/ToDo
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
