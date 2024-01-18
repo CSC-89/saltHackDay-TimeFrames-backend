@@ -7,5 +7,5 @@ public class DayData
     public double WorkTime { get; set; }
     public double WakeTime { get; set; }
     public double SleepTime { get; set; }
-    public Task[] Tasks { get; set; }
+    public List<ToDo> Tasks { get; set; }
 }
