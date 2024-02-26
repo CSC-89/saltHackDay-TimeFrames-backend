@@ -43,12 +43,12 @@ namespace TimeFrames.Api.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteToDo(int id)
         {
-            if (_context.ToDo == null)
+            if (!ToDoExists(id))
             {
                 return NotFound();
             }
 
-            var toDo = await _context.ToDo.FindAsync(id);
+            var toDo = await _context.ToDo!.FindAsync(id);
             if (toDo == null)
             {
                 return NotFound();
